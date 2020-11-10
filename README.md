@@ -5,12 +5,11 @@ Coding Dojo Assignment
 ## Jokes API
 To solidify what we've read about mongoose commands and express, lets create a new express project from scratch called "Jokes."
 
-![wireframe](
-
-
-
-
-
+![wireframe](https://github.com/qidCoder/mern_jokesAPI/blob/main/wireframe.png)
+![wireframe](https://github.com/qidCoder/mern_jokesAPI/blob/main/assignment1.png)
+![wireframe](https://github.com/qidCoder/mern_jokesAPI/blob/main/assignment2.png)
+![wireframe](https://github.com/qidCoder/mern_jokesAPI/blob/main/assignment3.png)
+![wireframe](https://github.com/qidCoder/mern_jokesAPI/blob/main/assignment4.png)
 
  - [ ] Create a project folder named "Jokes"
   - [ ] within "Jokes" create a modularized folder structure (server ==> controllers, routes, models, config, server.js)
