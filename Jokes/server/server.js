@@ -20,7 +20,7 @@ app.use(express.json());
 
 //this must be b elow where the app is created
 //gives us back the function that's exported so let's execute it so it can attach all of the routes to the app
-require("./routes/jokes.routes")(app)
+require("./routes/jokes.route")(app)
 
 //add in listener
 app.listen( port, () => {

@@ -1,7 +1,7 @@
 // in the jokes.routes file: import * from your controller file and add an express route for every route listed in the wireframe
 
 //import the controller so when a URL is visited, the request will be routed to a particular function in the controller which triggers the object with all the mothods on it
-const jokeController = require("../controllers/joke.controller");
+const jokeController = require("../controllers/jokes.controller");
 
 //export a function that needs access to our app since it will add the HTTP methods and URL to it
 module.exports = (app) => {
