@@ -84,6 +84,20 @@ module.exports = {
         .catch( (err) => {
             res.json(err);
         })
+    },
+
+    //returns a random joke
+    getRandom(req,res){
+        console.log("getRandom method executed", "url params: ", req.params);
+
+        //find() always returns an array even if you only have one item. That's why we can use findById() to just get a single object back
+        Joke.aggregate([{ $sample: {size: 1}}])
+        .then( (joke) => {
+            res.json(joke);
+        })
+        .catch( (err) => {
+            res.json(err);
+        })
     }
 
 }
