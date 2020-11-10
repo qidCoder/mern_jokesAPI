@@ -8,11 +8,11 @@ module.exports = (app) => {
     //returns a list of all jokes
     app.get("/api/jokes", jokeController.getAll);
 
+    //returns a random joke - must be before the getOne route
+    app.get("/api/jokes/random", jokeController.getRandom);
+        
     //returns the joke with matching "id"
     app.get("/api/jokes/:id", jokeController.getOne);
-
-    //returns a random joke
-    app.get("/api/jokes/random", jokeController.getRandom);
 
     //creates a new joke
     app.post("/api/jokes/new", jokeController.create);

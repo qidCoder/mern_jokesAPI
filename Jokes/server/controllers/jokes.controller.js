@@ -88,16 +88,29 @@ module.exports = {
 
     //returns a random joke
     getRandom(req,res){
-        console.log("getRandom method executed", "url params: ", req.params);
+        console.log("getRandom method executed");
 
-        //find() always returns an array even if you only have one item. That's why we can use findById() to just get a single object back
-        Joke.aggregate([{ $sample: {size: 1}}])
-        .then( (joke) => {
-            res.json(joke);
+        // Get the count of all users
+        Joke.count().exec((err, count) => {
+
+        // Get a random entry
+        var random = Math.floor(Math.random() * count)
+  
+        // Again query all users but only fetch one offset by our random #
+        //findOne() is built-in to Mongoose
+        Joke.findOne().skip(random).exec((err, result) => {
+            if(err){
+                return res.json(err)
+            }
+    
+            // Tada! random user
+            return res.json(result);
         })
-        .catch( (err) => {
-            res.json(err);
-        })
+        
+        
+    })
     }
 
 }
+
+
